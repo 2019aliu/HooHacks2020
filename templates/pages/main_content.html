@@ -1,0 +1,21 @@
+{% extends 'layouts/main.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<div class="page-header">
+  <h1>Sticky footer with fixed navbar</h1>
+</div>
+<p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added within <code>#wrap</code> with <code>padding-top: 60px;</code> on the <code>.container</code>.</p>
+
+{% include 'plots/coronavirusWorld.html'%}
+<!-- <div id="includedContent"></div>
+<script src="jquery.js"></script> 
+    <script> 
+    $(function(){
+      $("#includedContent").load("../Notebooks/CoronavirusPlots/coronavirusWorld.html"); 
+    });
+  </script> -->
+
+<!-- <iframe width="650" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="2019-nCoV" src="//gisanddata.maps.arcgis.com/apps/Embed/index.html?webmap=14aa9e5660cf42b5b4b546dec6ceec7c&extent=77.3846,11.535,163.5174,52.8632&zoom=true&previewImage=false&scale=true&disable_scroll=true&theme=light"></iframe> -->
+
+{% endblock %}

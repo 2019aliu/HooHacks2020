@@ -1,0 +1,9 @@
+curl -OL https://downloads.mongodb.org/osx/mongodb-shell-macos-x86_64-4.2.5.tgz
+tar -xvf mongodb-shell-macos-x86_64-4.2.5.tgz
+cd mongodb-macos-x86_64-4.2.5/bin
+
+
+I've might have done this already, so here is the command to connect:
+./mongo "mongodb+srv://covid2020-k5vfm.mongodb.net/test"  --username admin
+
+The password is admin
