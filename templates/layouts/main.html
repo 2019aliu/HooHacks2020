@@ -19,18 +19,21 @@
 <link type="text/css" rel="stylesheet" href="/static/css/main.quickfix.css" />
 <style>
   body {
-    background-color: #CFE5FF;
+    margin-bottom: 60px;
+    background-color: #1C3580;
+    color: #eeeeee
   }
   .footerlink {
-    color: #fcfcfc
+    color: #dddddd
   }
   .footer {
-    position: relative;
+    position: fixed;
+    bottom: 0;
     width: 100%;
+    line-height: 60px; /* Vertically center the text there */
     /* Set the fixed height of the footer here */
     height: 60px;
-    line-height: 60px; /* Vertically center the text there */
-    background-color: #497AB3;
+    background-color: #85A3FF;
     color: #fcfcfc;
     margin-top: 30px;
   }
@@ -129,6 +132,7 @@
       {% endwith %}
 
       {% block content %}{% endblock %}
+      <br/><br/><br/><br/><br/>
       
     </main>
 

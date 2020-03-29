@@ -9,6 +9,8 @@ from logging import Formatter, FileHandler
 from forms import *
 import os
 
+from webspider import generateDigest
+
 #----------------------------------------------------------------------------#
 # App Config.
 #----------------------------------------------------------------------------#
@@ -43,7 +45,8 @@ def login_required(test):
 
 @app.route('/')
 def home():
-    return render_template('pages/main_content.html')
+    dailyDigestPreview = generateDigest("covid-19%20OR%20coronavirus%20when:2d")[0]
+    return render_template('pages/main_content.html', digestPreview=dailyDigestPreview)
 
 # Map routes
 @app.route('/jhumap')
@@ -64,7 +67,8 @@ def coronavirus_cases():
 
 @app.route('/digest')
 def digest():
-    return render_template('pages/digest.html')
+    dailyDigest = generateDigest("covid-19%20OR%20coronavirus%20when:2d")
+    return render_template('pages/digest.html', digest=dailyDigest)
 
 @app.route('/about')
 def about():

@@ -4,4 +4,12 @@
 
 <h1 class="display-1">Daily Digest</h1>
 
+<!-- <p style="font-size: large; ">{{digest}}</p> -->
+<p class="lead" style="font-size: large;">
+    {% for point in digest %}
+        {{point}}
+        <br/><br/>
+    {% endfor %}
+</p>
+
 {% endblock %}

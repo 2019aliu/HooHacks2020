@@ -10,6 +10,7 @@
   }
   .titlebox {
     background-color: #fafafa;
+    color: #333333;
   }
   .mainbutton {
     background-color: #415E80;
@@ -24,30 +25,35 @@
 
 <div class="container-fluid">
   <div class="jumbotron titlebox">
-      <h1>Let's Beat Coronavirus with Knowledge.</h1>
-      <br>
-      <p class="lead">In the current pandemic of Coronavirus (COVID-19), it's important to stay informed and up-to-date with all of the latest information about Coronavirus. 
-        This website gives you just that, including a daily 1-minute digest of the news, coronavirus trends and plots, health tips, and financial information.
-        We can beat coronavirus together by learning about the Coronavirus, because knowledge is power.
-      </p>
+    <h1>Let's Beat Coronavirus with Knowledge.</h1>
+    <br>
+    <p class="lead" style="font-weight: 350">In the current pandemic of Coronavirus (COVID-19), it's important to stay informed and up-to-date with all of the latest information about Coronavirus. 
+      This website gives you just that, including a daily 1-minute digest of the news, coronavirus trends and plots, health tips, and financial information.
+      We can beat coronavirus together by learning about the Coronavirus, because knowledge is power.
+    </p>
   </div>
   <hr>
   <div class="row">
     <div class="col-md-12">
       <h2>Daily Digest</h2>
-      <p>Your daily digest</p>
+      <p class="lead" style="font-weight: 300; font-size:large;">
+        {{ digestPreview }}...
+        <br/><br/>
+      </p>
+      <p><a href="{{url_for('digest')}}" target="_blank" class="btn mainbutton">Read More »</a></p>
     </div>
   </div>
   <hr>
   <div class="row">
       <div class="col-md-4">
           <h2>World Plot</h2>
+          <p>See the current status of coronavirus throughout the world, powered by modern visualization tools.</p>
           <img src="/static/img/coronavirusWorldScreenshot.png" alt="World plot screenshot">
           <p><a href="{{url_for('worldmap')}}" target="_blank" class="btn mainbutton">View »</a></p>
       </div>
       <div class="col-md-4">
-          <h2>Coronavirus Trends</h2>
-          <p>A machine learning model to predict the number of cases in countries around the world</p>
+          <h2>Coronavirus Insights</h2>
+          <p>View our predictions of the latest coronavirus outbreaks and other related trends using advanced statistical models.</p>
           <p><a href="{{url_for('coronavirus_cases')}}" target="_blank" class="btn mainbutton">Learn
               More »</a></p>
       </div>
@@ -58,29 +64,6 @@
                 class="btn mainbutton">Learn More »</a></p>
       </div>
   </div>
-  <!-- <footer>
-      <div class="row">
-          <div class="col-md-6">
-              <p>Copyright &copy; 2020 Creating the Next</p>
-          </div>
-          <div class="col-md-6 text-md-right">
-              <a href="http://www.github.com/2019aliu" class="text-dark">Alex Liu</a>
-              <span class="text-muted mx-2">|</span>
-              <a href="http://www.github.com/aniruddhamurali" class="text-dark">Aniruddha Murali</a>
-              <span class="text-muted mx-2">|</span>
-              <a href="http://www.github.com/ceelo777" class="text-dark">Chris Lo</a>
-          </div>
-      </div>
-  </footer> -->
 </div>
-<!-- <div id="includedContent"></div>
-<script src="jquery.js"></script> 
-    <script> 
-    $(function(){
-      $("#includedContent").load("../Notebooks/CoronavirusPlots/coronavirusWorld.html"); 
-    });
-  </script> -->
-
-<!-- <iframe width="650" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="2019-nCoV" src="//gisanddata.maps.arcgis.com/apps/Embed/index.html?webmap=14aa9e5660cf42b5b4b546dec6ceec7c&extent=77.3846,11.535,163.5174,52.8632&zoom=true&previewImage=false&scale=true&disable_scroll=true&theme=light"></iframe> -->
 
 {% endblock %}
