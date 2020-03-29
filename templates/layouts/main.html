@@ -18,13 +18,20 @@
 <link type="text/css" rel="stylesheet" href="/static/css/main.responsive.css" />
 <link type="text/css" rel="stylesheet" href="/static/css/main.quickfix.css" />
 <style>
+  body {
+    background-color: #CFE5FF;
+  }
+  .footerlink {
+    color: #fcfcfc
+  }
   .footer {
     position: relative;
     width: 100%;
     /* Set the fixed height of the footer here */
     height: 60px;
     line-height: 60px; /* Vertically center the text there */
-    background-color: #bbbbbb;
+    background-color: #497AB3;
+    color: #fcfcfc;
     margin-top: 30px;
   }
 </style>
@@ -51,7 +58,7 @@
   <div id="wrap">
 
     <!-- Fixed navbar -->
-    <div class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar navbar-default bg-dark navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -133,11 +140,11 @@
           <p>Copyright &copy; 2020 Project Name</p>
       </div>
       <div class="col-md-4 text-md-right">
-          <a href="http://www.github.com/2019aliu" class="text-dark">Alex Liu</a>
+          <span class="text-light">Github:</span>
+          <span class="text-muted mx-2">&nbsp;</span>
+          <a href="http://www.github.com/2019aliu" class="footerlink text-dark">Alex Liu</a>
           <span class="text-muted mx-2">|</span>
-          <a href="http://www.github.com/ceelo777" class="text-dark">Chris Lo</a>
-          <span class="text-muted mx-2">|</span>
-          <a href="http://www.github.com/dn285" class="text-dark">Dan Ni</a>
+          <a href="http://www.github.com/ceelo777" class="footerlink text-dark">Chris Lo</a>
       </div>
     </div>
 </footer>
