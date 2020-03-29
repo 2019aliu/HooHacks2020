@@ -45,6 +45,26 @@ def login_required(test):
 def home():
     return render_template('pages/main_content.html')
 
+# Map routes
+@app.route('/jhumap')
+def jhumap():
+    return render_template('pages/jhu_map.html')
+
+@app.route('/worldmap')
+def worldmap():
+    return render_template('pages/world_map.html')
+
+@app.route('/finance')
+def finance():
+    return render_template('pages/finance.html')
+
+@app.route('/coronavirus_cases')
+def coronavirus_cases():
+    return render_template('pages/coronavirus_cases.html')
+
+@app.route('/digest')
+def digest():
+    return render_template('pages/digest.html')
 
 @app.route('/about')
 def about():

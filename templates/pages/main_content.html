@@ -2,12 +2,69 @@
 {% block title %}Home{% endblock %}
 {% block content %}
 
-<div class="page-header">
+<style>
+  img {
+    width: 100%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+</style>
+
+<!-- <div class="page-header">
   <h1>Sticky footer with fixed navbar</h1>
 </div>
-<p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added within <code>#wrap</code> with <code>padding-top: 60px;</code> on the <code>.container</code>.</p>
+<p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added within <code>#wrap</code> with <code>padding-top: 60px;</code> on the <code>.container</code>.</p> -->
 
-{% include 'plots/coronavirusWorld.html'%}
+<div class="container-fluid">
+  <div class="jumbotron">
+      <h1>Let's Beat Coronavirus with Knowledge.</h1>
+      <p class="lead">In the current pandemic of Coronavirus (COVID-19), it's important to stay informed and up-to-date with all of the latest information about Coronavirus. 
+        This website gives you just that, including a daily 1-minute digest of the news, coronavirus trends and plots, health tips, and financial information.
+        We can beat coronavirus together by learning about the Coronavirus, because knowledge is power.
+      </p>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Daily Digest</h2>
+      <p>Your daily digest</p>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+      <div class="col-md-4">
+          <h2>World Plot</h2>
+          <img src="/static/img/coronavirusWorldScreenshot.png" alt="World plot screenshot">
+          <p><a href="{{url_for('worldmap')}}" target="_blank" class="btn btn-success">View »</a></p>
+      </div>
+      <div class="col-md-4">
+          <h2>Coronavirus Trends</h2>
+          <p>A machine learning model to predict the number of cases in countries around the world</p>
+          <p><a href="https://www.tutorialrepublic.com/css-tutorial/" target="_blank" class="btn btn-success">Learn
+              More »</a></p>
+      </div>
+      <div class="col-md-4">
+          <h2>Finance</h2>
+          <p>Tool to keep track of financial data and statistics during this financial recession.</p>
+          <p><a href="https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank"
+                class="btn btn-success">Learn More »</a></p>
+      </div>
+  </div>
+  <!-- <footer>
+      <div class="row">
+          <div class="col-md-6">
+              <p>Copyright &copy; 2020 Creating the Next</p>
+          </div>
+          <div class="col-md-6 text-md-right">
+              <a href="http://www.github.com/2019aliu" class="text-dark">Alex Liu</a>
+              <span class="text-muted mx-2">|</span>
+              <a href="http://www.github.com/aniruddhamurali" class="text-dark">Aniruddha Murali</a>
+              <span class="text-muted mx-2">|</span>
+              <a href="http://www.github.com/ceelo777" class="text-dark">Chris Lo</a>
+          </div>
+      </div>
+  </footer> -->
+</div>
 <!-- <div id="includedContent"></div>
 <script src="jquery.js"></script> 
     <script> 

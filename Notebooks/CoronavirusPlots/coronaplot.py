@@ -54,11 +54,11 @@ for i in range(len(dataSlider)):
     steps.append(step)
 
 sliders = [dict(active=0,
-                pad={"t": 100},
+                pad={"t": 10},
                 steps=steps)] 
 
 layout = dict(
-    title = 'World Map of Global Confirmed Cases of Coronavirus since January 22, 2020',
+    title = 'World Map of Global Confirmed Cases of Coronavirus',
     geo = dict(
         showframe = True,
         showocean = True,

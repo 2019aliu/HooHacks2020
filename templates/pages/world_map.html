@@ -1,0 +1,28 @@
+{% extends 'layouts/main.html' %}
+{% block title %}World Map{% endblock %}
+{% block content %}
+
+<style>
+  .worldmaptext {
+    height: 20%;
+  }
+  .worldmap {
+    position: absolute; 
+    height: 65%;
+    width: 85%; 
+    border: none;
+  }
+</style>
+
+<div class="worldmaptext">
+  <h1 class="display-3">3D Map of Confirmed Coronavirus Cases, 2020 Pandemic</h1>
+  <p class="lead">This globe displays a logarithmic scaling of the number of confirmed cases of Coronavirus, or COVID-19. 
+    The number of cases and colors are logarithmically scaled. For example, on 3/28/20, 
+    the US has a value of a little more than 5, so the number of cases would be 10 to the 5th power
+    (10<sup>5</sup>), or a little more than 100,000.
+  </p>
+</div>
+
+{% include 'plots/coronavirusWorld.html' %}
+
+{% endblock %}

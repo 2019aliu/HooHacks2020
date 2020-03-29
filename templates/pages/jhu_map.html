@@ -1,0 +1,23 @@
+{% extends 'layouts/main.html' %}
+{% block title %}JHU Map{% endblock %}
+{% block content %}
+
+<div class="jhumaptext">
+    <h1 class="display-3">Map of local Coronavirus cases</h1>
+    <p class="lead">This map shows all cases of Coronavirus as of today. 
+        Made by Johns Hopkins University (JHU) researchers, this map was made to help everyone track cases world wide.
+        <!-- To use:
+        <ul>
+            <li>Pan: drag inside the map</li>
+            <li>Zoom in: double tap the map, pinch in inside the map, or press the plus button</li>
+            <li>Zoom out: Pinch out inside the map, or press the minus button</li>
+        </ul> -->
+    </p>
+    <p>Source: <a href="https://systems.jhu.edu">Johns Hopkins Center for Systems Science and Engineering</a></p>
+  </div>
+
+<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="2019-nCoV" 
+src="//gisanddata.maps.arcgis.com/apps/Embed/index.html?webmap=14aa9e5660cf42b5b4b546dec6ceec7c&extent=77.3846,11.535,163.5174,52.8632&zoom=true&previewImage=false&scale=true&disable_scroll=true&theme=light"
+style="position: absolute; height: 65%; width: 85%; border: none"></iframe>
+
+{% endblock %}
