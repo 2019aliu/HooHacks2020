@@ -2,14 +2,17 @@
 # Imports
 #----------------------------------------------------------------------------#
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_file
 # from flask.ext.sqlalchemy import SQLAlchemy
 import logging
 from logging import Formatter, FileHandler
 from forms import *
 import os
+import io
+import base64
 
-from webspider import generateDigest
+import webspider
+import Notebooks.StocksNotebooks.stockGraphs as stockPlotter
 
 #----------------------------------------------------------------------------#
 # App Config.
@@ -45,7 +48,7 @@ def login_required(test):
 
 @app.route('/')
 def home():
-    dailyDigestPreview = generateDigest("covid-19%20OR%20coronavirus%20when:2d")[0]
+    dailyDigestPreview = webspider.generatePreview("covid-19%20OR%20coronavirus%20when:2d")
     return render_template('pages/main_content.html', digestPreview=dailyDigestPreview)
 
 # Map routes
@@ -59,7 +62,22 @@ def worldmap():
 
 @app.route('/finance')
 def finance():
+    # allGraphs = stockPlotter.allPlots()
     return render_template('pages/finance.html')
+
+@app.route('/finance/plots/<freq>/<chartType>', methods=['GET'])
+def getAllPlots(freq, chartType):
+    # allGraphs = stockPlotter.allPlots()
+    if freq=='weekly':
+        xinterval = 50
+    else:
+        xinterval = 10
+    allGraphs = stockPlotter.generateStockPlots(freq=freq, xinterval=xinterval, option='bytes')
+    bytes_obj = allGraphs[chartType.lower()]
+
+    return send_file(bytes_obj,
+                     attachment_filename='plot.png',
+                     mimetype='image/png')
 
 @app.route('/coronavirus_cases')
 def coronavirus_cases():
@@ -67,7 +85,7 @@ def coronavirus_cases():
 
 @app.route('/digest')
 def digest():
-    dailyDigest = generateDigest("covid-19%20OR%20coronavirus%20when:2d")
+    dailyDigest = webspider.generateDigest("covid-19%20OR%20coronavirus%20when:2d")
     return render_template('pages/digest.html', digest=dailyDigest)
 
 @app.route('/about')
@@ -123,7 +141,7 @@ if not app.debug:
 if __name__ == '__main__':
     app.run()
 
-# Or specify port automatically:
+# Or specify port with manual variable:
 '''
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
